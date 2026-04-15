@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에코팀</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0f1a;
+    color: #fff;
+}
+
+/* 네온 공통 */
+.glow {
+    text-shadow: 0 0 10px #6c63ff, 0 0 20px #6c63ff;
+}
+
+/* 네비게이션 */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(10,10,20,0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+nav h1 {
+    color: #6c63ff;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #6c63ff;
+}
+
+/* 햄버거 */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #121a2f, #05070f);
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    margin: 10px;
+    padding: 12px 25px;
+    border: none;
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #6c63ff;
+}
+
+.hero button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #8f88ff;
+}
+
+/* 섹션 */
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* 카드 */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(108,99,255,0.3);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(108,99,255,0.8);
+}
+
+.card img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+/* 문의 버튼 */
+.contact-btn {
+    display: block;
+    width: 250px;
+    margin: 30px auto;
+    padding: 15px;
+    text-align: center;
+    background: #6c63ff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 15px #6c63ff;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px #9a94ff;
+}
+
+/* fade */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 200px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>에코팀</h1>
+    <div class="menu-toggle">☰</div>
+    <ul>
+        <li><a href="#tier">티어제</a></li>
+        <li><a href="#placement">배치고사</a></li>
+        <li><a href="#pro">기사</a></li>
+        <li><a href="#contact">문의</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div>
+        <h2 class="glow">에코팀 - 빠르고 안전한 티어 상승</h2>
+        <button onclick="scrollToSection('tier')">가격 확인하기</button>
+        <button onclick="scrollToSection('contact')">문의하기</button>
+    </div>
+</section>
+
+<section id="tier" class="fade">
+    <h3>티어제 가격</h3>
+    <div class="grid">
+        <div class="card">브론즈<br>10,000원</div>
+        <div class="card">실버<br>10,000원</div>
+        <div class="card">골드<br>15,000원</div>
+        <div class="card">플레티넘<br>18,000원</div>
+        <div class="card">다이아 5~4<br>22,000원</div>
+        <div class="card">다이아 3~1<br>26,000원</div>
+        <div class="card">마스터 5~4<br>35,000원</div>
+        <div class="card">마스터 3~2<br>42,000원</div>
+        <div class="card">마스터 1<br>60,000원</div>
+    </div>
+</section>
+
+<section id="placement" class="fade">
+    <h3>배치고사</h3>
+    <div class="grid">
+        <div class="card">언랭크<br>50,000원</div>
+        <div class="card">브/실/골<br>25,000원</div>
+        <div class="card">플레티넘<br>35,000원</div>
+        <div class="card">다이아 5~4<br>45,000원</div>
+        <div class="card">다이아 3~1<br>55,000원</div>
+        <div class="card">마스터 5~4<br>65,000원</div>
+        <div class="card">마스터 3~1<br>75,000원</div>
+    </div>
+</section>
+
+<section id="pro" class="fade">
+    <h3>기사 소개</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>딜러: Echokd</h4>
+            <p>상위 0.1% 랭커<br>다수 시즌 인증</p>
+        </div>
+        <div class="card">
+            <h4>힐러: Echokk</h4>
+            <p>상위 0.1% 랭커<br>다수 시즌 인증</p>
+        </div>
+        <div class="card">
+            <h4>탱커: Echodg</h4>
+            <p>상위 0.1% 랭커<br>다수 시즌 인증</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="fade">
+    <h3>문의하기</h3>
+    <a class="contact-btn" href="https://discord.gg/XHsU34bc6P" target="_blank">디스코드 문의</a>
+    <p style="text-align:center;">기타 문의는 디스코드로 문의 바랍니다</p>
+</section>
+
+<script>
+// 햄버거 메뉴
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('nav ul');
+
+toggle.onclick = () => {
+    menu.classList.toggle('active');
+};
+
+// 스크롤 이동
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// fade-in
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
